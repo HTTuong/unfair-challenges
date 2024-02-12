@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { styled } from '@mui/material/styles'
-import { Checkbox, Button } from '@mui/joy'
+import { Checkbox } from '@mui/joy'
 import Slider from '@mui/joy/Slider'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
