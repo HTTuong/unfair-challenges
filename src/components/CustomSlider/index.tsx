@@ -34,7 +34,7 @@ const Mui_CustomSlider1 = styled(Slider)(
     z-index: 20;
    }
 
-    && .MuiSlider-valueLabel MuiSlider-valueLabelOpen::before {
+    && .MuiSlider-valueLabel.MuiSlider-valueLabelOpen.css-xe4soo::before {
         color: ${disabled ? '' : '#0B6BCB'} !important;
     }
 
@@ -60,7 +60,7 @@ const Mui_CustomSlider2 = styled(Slider)(
         z-index: -1;
     }
 
-    && .MuiSlider-valueLabel MuiSlider-valueLabelOpen::before {
+    && .MuiSlider-valueLabel.MuiSlider-valueLabelOpen.css-xe4soo::before {
         color: ${disabled ? '' : '#0B6BCB'} !important;
     }
 
@@ -163,7 +163,7 @@ export default function CustomSlider(props: ICustomSliderProps) {
     function valueLabelFormat(value: number) {
         return (
             <div
-                className={classNames('w-3 h-3 ', {
+                className={classNames('w-4 h-4 ', {
                     'bg-[#0B6BCB]': !disable,
                 })}
             ></div>
