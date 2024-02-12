@@ -4,7 +4,6 @@ import { Checkbox } from '@mui/joy'
 import Slider from '@mui/joy/Slider'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
-import { convertValueToWeek } from '~root/utils/converter'
 
 export interface ICustomSliderProps {
     disableLabel: string
