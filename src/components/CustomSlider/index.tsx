@@ -17,16 +17,17 @@ export interface ICustomSliderProps {
 const Mui_CustomSlider1 = styled(Slider)(
     () => `
    && .css-1jq9w0k-JoySlider-track {
-    z-index: 1;
+    z-index: 10;
    }
 
    && .css-hayzob-JoySlider-thumb {
-    z-index: 2;
+    z-index: 99;
    }
 
-   && .css-hayzob-JoySlider-thumb {
-    background-color: #0B6BCB
+   &&. .MuiSlider-mark.css-vf7ce7{
+    z-index: 20;
    }
+
   `,
 )
 
@@ -36,8 +37,10 @@ const Mui_CustomSlider2 = styled(Slider)(
     z-index: -1;
    }
 
-   && .css-hayzob-JoySlider-thumb {
-    background-color: #0B6BCB
+   
+
+   &&. .MuiSlider-mark.css-vf7ce7{
+    z-index: -1;
    }
   `,
 )
