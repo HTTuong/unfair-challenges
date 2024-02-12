@@ -4,6 +4,7 @@ import { Checkbox } from '@mui/joy'
 import Slider from '@mui/joy/Slider'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
+import classNames from 'classnames'
 
 export interface ICustomSliderProps {
     disableLabel: string
@@ -15,7 +16,7 @@ export interface ICustomSliderProps {
 }
 
 const Mui_CustomSlider1 = styled(Slider)(
-    () => `
+    ({ disabled }) => `
 
     && .css-17u53z3 {
         z-index: 0;
@@ -34,7 +35,7 @@ const Mui_CustomSlider1 = styled(Slider)(
    }
 
     && .css-sl4hj6-JoySlider-valueLabel::before {
-        color: #0B6BCB;
+        color: ${disabled ? '' : '#0B6BCB'} ;
     }
 
     && .MuiSlider-valueLabel.MuiSlider-valueLabelOpen.css-sl4hj6-JoySlider-valueLabel {
@@ -45,32 +46,22 @@ const Mui_CustomSlider1 = styled(Slider)(
   `,
 )
 
-// && .css-sl4hj6-JoySlider-valueLabel{
-//     min-width: 0px
-//     padding-inline: unset
-// }
-
-// && span.MuiSlider-valueLabel MuiSlider-valueLabelOpen css-sl4hj6-JoySlider-valueLabel {
-//     min-width: 0px
-//     padding-inline: unset
-// }
-
 const Mui_CustomSlider2 = styled(Slider)(
-    () => `
-   && .css-17u53z3 {
-    z-index: -1;
-   }
+    ({ disabled }) => `
+    && .css-17u53z3 {
+        z-index: -1;
+    }
 
-   && .css-vf7ce7{
-    z-index: -1;
-   }
+    && .css-vf7ce7{
+        z-index: -1;
+    }
 
     && .css-1derak0 {
         z-index: -1;
     }
 
     && .css-sl4hj6-JoySlider-valueLabel::before {
-        color: #0B6BCB;
+        color: ${disabled ? '' : '#0B6BCB'} ;
     }
 
     && .MuiSlider-valueLabel.MuiSlider-valueLabelOpen.css-sl4hj6-JoySlider-valueLabel {
@@ -80,15 +71,6 @@ const Mui_CustomSlider2 = styled(Slider)(
 
   `,
 )
-
-// && .css-sl4hj6-JoySlider-valueLabel{
-//     min-width: 0
-//     padding-inline: unset
-// }
-
-// && .css-sl4hj6-JoySlider-valueLabel::before {
-//     color: #000
-// }
 
 const marks = [
     {
@@ -180,7 +162,13 @@ export default function CustomSlider(props: ICustomSliderProps) {
     }
 
     function valueLabelFormat(value: number) {
-        return <div className='w-3 h-3 bg-[#0B6BCB]'></div>
+        return (
+            <div
+                className={classNames('w-3 h-3 ', {
+                    'bg-[#0B6BCB]': !disable,
+                })}
+            ></div>
+        )
     }
 
     return (
