@@ -34,13 +34,13 @@ const Mui_CustomSlider1 = styled(Slider)(
     z-index: 20;
    }
 
-    && .css-sl4hj6-JoySlider-valueLabel::before {
-        color: ${disabled ? '' : '#0B6BCB'} ;
+    && .MuiSlider-valueLabel MuiSlider-valueLabelOpen::before {
+        color: ${disabled ? '' : '#0B6BCB'} !important;
     }
 
-    && .MuiSlider-valueLabel.MuiSlider-valueLabelOpen.css-sl4hj6-JoySlider-valueLabel {
-        padding-inline: 0;
-        min-width: 0;
+    && .MuiSlider-valueLabel {
+        padding-inline: 0 !important;
+        min-width: 0 !important;
     }
 
   `,
@@ -60,16 +60,14 @@ const Mui_CustomSlider2 = styled(Slider)(
         z-index: -1;
     }
 
-    && .css-sl4hj6-JoySlider-valueLabel::before {
-        color: ${disabled ? '' : '#0B6BCB'} ;
+    && .MuiSlider-valueLabel MuiSlider-valueLabelOpen::before {
+        color: ${disabled ? '' : '#0B6BCB'} !important;
     }
 
     && .MuiSlider-valueLabel {
         padding-inline: 0 !important;
         min-width: 0 !important;
     }
-
-   
   `,
 )
 
