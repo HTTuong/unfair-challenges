@@ -26,6 +26,14 @@ const Mui_CustomSlider1 = styled(Slider)(
   `,
 )
 
+const Mui_CustomSlider2 = styled(Slider)(
+    () => `
+   && .css-17u53z3 {
+    z-index: -1;
+   }
+  `,
+)
+
 const marks = [
     {
         value: 0,
@@ -143,7 +151,7 @@ export default function CustomSlider(props: ICustomSliderProps) {
                     </div>
                     {extraRange && (
                         <div className='w-full  ml-[-100%]'>
-                            <Slider
+                            <Mui_CustomSlider2
                                 sx={{ width: '100%' }}
                                 track='normal'
                                 disabled={disable}
