@@ -33,6 +33,14 @@ const Mui_CustomSlider1 = styled(Slider)(
     z-index: 20;
    }
 
+    && .css-sl4hj6-JoySlider-valueLabel::before {
+        color: #0B6BCB;
+    }
+
+    && .MuiSlider-valueLabel.MuiSlider-valueLabelOpen.css-sl4hj6-JoySlider-valueLabel {
+        padding-inline: 0;
+        min-width: 0;
+    }
 
   `,
 )
@@ -59,6 +67,15 @@ const Mui_CustomSlider2 = styled(Slider)(
 
     && .css-1derak0 {
         z-index: -1;
+    }
+
+    && .css-sl4hj6-JoySlider-valueLabel::before {
+        color: #0B6BCB;
+    }
+
+    && .MuiSlider-valueLabel.MuiSlider-valueLabelOpen.css-sl4hj6-JoySlider-valueLabel {
+        padding-inline: 0;
+        min-width: 0;
     }
 
   `,
@@ -106,10 +123,6 @@ const marks = [
 
 function valueText(value: number) {
     return `${value}`
-}
-
-function valueLabelFormat(value: number) {
-    return ''
 }
 
 export default function CustomSlider(props: ICustomSliderProps) {
@@ -164,6 +177,10 @@ export default function CustomSlider(props: ICustomSliderProps) {
         if (!disable) {
             setExtraRange((prev) => !prev)
         }
+    }
+
+    function valueLabelFormat(value: number) {
+        return <div className='w-3 h-3 bg-[#0B6BCB]'></div>
     }
 
     return (
