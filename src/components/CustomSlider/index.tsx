@@ -4,6 +4,7 @@ import { Checkbox } from '@mui/joy'
 import Slider from '@mui/joy/Slider'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
+import { convertValueToWeek } from '~root/utils/converter'
 
 export interface ICustomSliderProps {
     disableLabel: string
@@ -23,6 +24,10 @@ const Mui_CustomSlider1 = styled(Slider)(
    && .css-hayzob-JoySlider-thumb {
     z-index: 2;
    }
+
+   && .css-hayzob-JoySlider-thumb {
+    background-color: #0B6BCB
+   }
   `,
 )
 
@@ -30,6 +35,10 @@ const Mui_CustomSlider2 = styled(Slider)(
     () => `
    && .css-17u53z3 {
     z-index: -1;
+   }
+
+   && .css-hayzob-JoySlider-thumb {
+    background-color: #0B6BCB
    }
   `,
 )
@@ -67,6 +76,10 @@ const marks = [
 
 function valueText(value: number) {
     return `${value}`
+}
+
+function valueLabelFormat(value: number) {
+    return ''
 }
 
 export default function CustomSlider(props: ICustomSliderProps) {
@@ -147,6 +160,8 @@ export default function CustomSlider(props: ICustomSliderProps) {
                             onChange={handleChange1}
                             step={100 / 6}
                             marks={marks}
+                            valueLabelDisplay='on'
+                            valueLabelFormat={valueLabelFormat}
                         />
                     </div>
                     {extraRange && (
@@ -161,6 +176,8 @@ export default function CustomSlider(props: ICustomSliderProps) {
                                 onChange={handleChange2}
                                 step={100 / 6}
                                 marks={marks}
+                                valueLabelDisplay='on'
+                                valueLabelFormat={valueLabelFormat}
                             />
                         </div>
                     )}
