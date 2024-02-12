@@ -16,6 +16,11 @@ export interface ICustomSliderProps {
 
 const Mui_CustomSlider1 = styled(Slider)(
     () => `
+
+    && .css-17u53z3 {
+        z-index: 1;
+    }
+
    && .css-1jq9w0k-JoySlider-track {
     z-index: 10;
    }
@@ -37,11 +42,12 @@ const Mui_CustomSlider2 = styled(Slider)(
     z-index: -1;
    }
 
-   
-
-   &&. .MuiSlider-mark.css-vf7ce7{
+   &&. .css-vf7ce7{
     z-index: -1;
    }
+
+   &&. .css-1derak0 {
+    z-index: -1;
   `,
 )
 
