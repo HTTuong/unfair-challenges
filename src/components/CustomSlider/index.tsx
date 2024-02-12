@@ -29,12 +29,23 @@ const Mui_CustomSlider1 = styled(Slider)(
     z-index: 99;
    }
 
-   &&. .MuiSlider-mark.css-vf7ce7{
+   && .MuiSlider-mark.css-vf7ce7{
     z-index: 20;
    }
 
+
   `,
 )
+
+// && .css-sl4hj6-JoySlider-valueLabel{
+//     min-width: 0px
+//     padding-inline: unset
+// }
+
+// && span.MuiSlider-valueLabel MuiSlider-valueLabelOpen css-sl4hj6-JoySlider-valueLabel {
+//     min-width: 0px
+//     padding-inline: unset
+// }
 
 const Mui_CustomSlider2 = styled(Slider)(
     () => `
@@ -42,14 +53,25 @@ const Mui_CustomSlider2 = styled(Slider)(
     z-index: -1;
    }
 
-   &&. .css-vf7ce7{
+   && .css-vf7ce7{
     z-index: -1;
    }
 
-   &&. .css-1derak0 {
-    z-index: -1;
+    && .css-1derak0 {
+        z-index: -1;
+    }
+
   `,
 )
+
+// && .css-sl4hj6-JoySlider-valueLabel{
+//     min-width: 0
+//     padding-inline: unset
+// }
+
+// && .css-sl4hj6-JoySlider-valueLabel::before {
+//     color: #000
+// }
 
 const marks = [
     {
