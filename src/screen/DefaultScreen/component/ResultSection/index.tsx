@@ -71,6 +71,18 @@ export default function ResultSection(props: IResultSectionProps) {
         'All',
     )
 
+    const countBestWeek = () => {
+        if (userList.length > 1) {
+            const listOfUserAvailability = userList.map((user) => user.availability)
+            const bestWeeks = intersection(listOfUserAvailability)
+            return userList.filter((user) =>
+                user.availability.some((week) => bestWeeks.includes(week)),
+            ).length
+        } else {
+            return userList.length
+        }
+    }
+
     const handleChangeOption = () => {
         setOption((currentOption) => {
             if (currentOption === 'Just for fun') {
@@ -203,10 +215,7 @@ export default function ResultSection(props: IResultSectionProps) {
                 )}
                 onClick={() => handleChangeAvailabilityOption('Best week')}
             >
-                <p>
-                    Best week (
-                    {userList.filter((user) => user.availability.includes('Week 7')).length})
-                </p>
+                <p>Best week ({countBestWeek()})</p>
             </div>
         </>
     )
