@@ -18,7 +18,7 @@ const Mui_CustomSlider1 = styled(Slider)(
     () => `
 
     && .css-17u53z3 {
-        z-index: 1;
+        z-index: 0;
     }
 
    && .css-1jq9w0k-JoySlider-track {
